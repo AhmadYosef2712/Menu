@@ -18,6 +18,7 @@
         android:id="@+id/Dash"
         app:showAsAction="ifRoom"
         android:title="Dashboard"
+        android:icon="@drawable/dash"
         />
 
 </menu>
