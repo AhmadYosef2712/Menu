@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/Home"
+        android:id="@+id/home"
         android:icon="@drawable/home"
         app:showAsAction="ifRoom"
         android:title="Home"
@@ -10,15 +10,17 @@
 
     <item
         android:icon="@drawable/login"
-        android:id="@+id/Login"
+        android:id="@+id/login"
         app:showAsAction="ifRoom"
-        android:title="Login"/>
+        android:title="Login"
+       />
 
     <item
-        android:id="@+id/Dash"
+        android:id="@+id/dash"
         app:showAsAction="ifRoom"
         android:title="Dashboard"
         android:icon="@drawable/dash"
         />
+
 
 </menu>
