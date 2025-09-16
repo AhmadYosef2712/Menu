@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -12,36 +12,45 @@
         android:layout_height="wrap_content"
         android:text="Log In"
         android:textSize="50dp"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginLeft="130dp"
+         />
 
     <EditText
+        android:id="@+id/u"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="UserName"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="149dp" />
+       android:layout_marginTop="100dp" />
 
     <EditText
+        android:id="@+id/p"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="253dp" />
+        android:layout_marginTop="150dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log In"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="421dp" />
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="280dp"
+        android:onClick="login"
+         />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="421dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+        android:onClick="cancel"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

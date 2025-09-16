@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -12,16 +12,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log Out"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+         />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Exit"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="280dp"
+        android:onClick="exit"/>
 
     <TextView
         android:id="@+id/textView"
@@ -29,6 +31,13 @@
         android:layout_height="wrap_content"
         android:text="DashBoard"
         android:textSize="50dp"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="54dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginLeft="80dp"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
