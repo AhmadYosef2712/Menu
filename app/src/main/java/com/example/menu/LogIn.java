@@ -17,10 +17,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class LogIn extends AppCompatActivity {
     private EditText p,u;
-     SharedPreferences sharedPref=getSharedPreferences("myPref",Context.MODE_PRIVATE);
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +50,21 @@ public class LogIn extends AppCompatActivity {
     }
 
     public void login(View view) {
-        String userName="";
-        String pass="";
-        String user=sharedPref.getString(userName,"admin");
-        String p=sharedPref.getString(pass,"admin");
-        if(user.equals(u) && p.equals(p)){
-            Toast.makeText(this, "welcome, loged in succefully", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(this, MainActivity.class);
+        String userName =u.getText().toString();
+        String password =p.getText().toString();
+        if(userName.isEmpty()|| password.isEmpty() || password.equals("Password") || userName.equals("UserName"))
+            Toast.makeText(this, "fill all fields", Toast.LENGTH_SHORT).show();
+        else{
+            SharedPreferences share=getSharedPreferences("UserPrefs",MODE_PRIVATE);
+            SharedPreferences.Editor editor = share.edit();
+
+            editor.putString("email",userName);
+            editor.putString("pass",password);
+            editor.apply();
+            Intent intent=new Intent(this, Dash.class);
             startActivity(intent);
             finish();
+            Toast.makeText(this, "signed in successfully", Toast.LENGTH_SHORT).show();
         }
 
 
