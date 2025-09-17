@@ -19,14 +19,14 @@
         android:id="@+id/u"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UserName"
+        android:hint="UserName"
        android:layout_marginTop="100dp" />
 
     <EditText
         android:id="@+id/p"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:hint="Password"
         android:layout_marginTop="150dp" />
 
     <Button

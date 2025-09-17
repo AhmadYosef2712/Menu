@@ -44,13 +44,10 @@ public class Dash extends AppCompatActivity {
     }
 
     public void logout(View view) {
-        if(getSharedPreferences("UserPrefs",MODE_PRIVATE).getString("email",null)==null)
-            Toast.makeText(this, "log in first", Toast.LENGTH_SHORT).show();
-        else{
-        deleteSharedPreferences("UserPrefs");
+        
         Intent intent=new Intent(this,LogIn.class);
         startActivity(intent);
         finish();
         Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show();}
-    }
+
 }

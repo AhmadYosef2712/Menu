@@ -52,19 +52,19 @@ public class LogIn extends AppCompatActivity {
     public void login(View view) {
         String userName =u.getText().toString();
         String password =p.getText().toString();
-        if(userName.isEmpty()|| password.isEmpty() || password.equals("Password") || userName.equals("UserName"))
+        if(userName.isEmpty()|| password.isEmpty() )
             Toast.makeText(this, "fill all fields", Toast.LENGTH_SHORT).show();
         else{
+            if(getSharedPreferences("UserPrefs",MODE_PRIVATE).getString("email",null).equals(userName)&&getSharedPreferences("UserPrefs",MODE_PRIVATE).getString("pass",null).equals(password)){
             SharedPreferences share=getSharedPreferences("UserPrefs",MODE_PRIVATE);
             SharedPreferences.Editor editor = share.edit();
-
-            editor.putString("email",userName);
-            editor.putString("pass",password);
             editor.apply();
             Intent intent=new Intent(this, Dash.class);
             startActivity(intent);
             finish();
-            Toast.makeText(this, "signed in successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "signed in successfully, welcome admin", Toast.LENGTH_SHORT).show();}
+            else
+                Toast.makeText(this, "wrong password or userName", Toast.LENGTH_SHORT).show();
         }
 
 
